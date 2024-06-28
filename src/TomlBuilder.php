@@ -79,7 +79,7 @@ class TomlBuilder
             $key = '"'.$key.'"';
         }
 
-        $line = "{$key} = {$this->dumpValue($val)}";
+        $line = "{$key}={$this->dumpValue($val)}";
 
         if (!empty($comment)) {
             $line .= ' '.$this->dumpComment($comment);
@@ -318,10 +318,10 @@ class TomlBuilder
         $normalized = $this->normalizeString($val);
 
         if (!$this->isStringValid($normalized)) {
-            throw new DumpException("The string has an invalid charters at the key \"{$this->currentKey}\".");
+            throw new DumpException("The string has an invalid charters at the key \"$this->currentKey\".");
         }
 
-        return '"'.$normalized.'"';
+        return $normalized;
     }
 
     private function isLiteralString(string $val) : bool
