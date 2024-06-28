@@ -315,7 +315,7 @@ class TomlBuilder
             return "'".preg_replace('/@/', '', $val, 1)."'";
         }
 
-        $normalized = $this->normalizeString($val);
+        $normalized = $val;
 
         if (!$this->isStringValid($normalized)) {
             throw new DumpException("The string has an invalid charters at the key \"$this->currentKey\".");
