@@ -1,5 +1,5 @@
 {
-    "name": "yosymfony/toml",
+    "name": "makhnanov/toml",
     "description": "A PHP parser for TOML compatible with specification 0.4.0",
     "type": "library",
     "keywords": ["toml", "parser", "mojombo"],
